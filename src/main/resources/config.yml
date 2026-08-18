@@ -1,0 +1,58 @@
+# Prefix used by alerts, commands and kick messages. Use & for colour codes.
+prefix: "&bGhost &7> "
+
+# 是否启用 CorrectPlayerMovePredictionPacket 回弹
+use-correct-player-move-prediction-packet: true
+
+Prediction:
+  # 这个检查通过模拟玩家的移动，并与玩家的实际移动进行比较
+  # 模拟计算出的玩家位置（玩家理应到达的位置）与玩家实际位置的偏差
+
+  threshold: 1E-4
+  # 若玩家大于此偏差量即标记为作弊
+  # 若玩家的移动偏差量超过此值，玩家会被强制回弹
+
+# 检测玩家是否穿墙
+Phase:
+  setbackvl: 1
+  # 到达多少VL时回弹
+
+# 检测玩家碰撞是否异常
+Collisions:
+  setbackvl: 1
+  # 到达多少VL时回弹
+
+# 使用模拟移动检查玩家击退
+Knockback:
+  threshold: 1E-4
+  # 若玩家的移动偏差超过此值，玩家会被强制回弹
+  setbackvl: 1
+  # 到达多少VL时回弹
+
+# 使用模拟移动检查NoSlow
+NoSlow:
+  threshold: 1E-4
+  # 若玩家的移动偏差超过此值，玩家会被强制回弹
+  setbackvl: 1
+  # 到达多少VL时回弹
+
+Reach:
+  max-tolerance-compensated-reach: 3.005
+  # 允许的玩家最大攻击距离
+  
+Timer:
+  max-balance-advantage: 8500
+  # 余额阈值
+
+# 关闭某项检查
+# 关闭的检查名称使用“名称-类型”，如果检查没有类型，则使用“名称”
+disabled-checks: []
+
+# 是否立即同步来自服务端的幽灵方块更新
+ignore-ghost-block: false
+
+# 等待latency确认的最长时间
+# 当玩家未能确认lartency包时踢出
+max-latency-wait: 15000
+
+debug-mode: false

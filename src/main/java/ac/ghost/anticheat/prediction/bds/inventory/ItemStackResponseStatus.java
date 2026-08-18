@@ -1,0 +1,46 @@
+package ac.ghost.anticheat.prediction.bds.inventory;
+
+
+public enum ItemStackResponseStatus {
+    OK(0),
+    ERROR(1),
+    INVALID_CRAFT_REQUEST(7),
+    INVALID_CRAFT_REQUEST_SCREEN(8),
+    INVALID_CRAFT_RESULT(9),
+    INVALID_CRAFT_RESULT_INDEX(10),
+    INVALID_CRAFT_RESULT_ITEM(11),
+    INVALID_ITEM_NET_ID(12),
+    MISSING_CREATED_OUTPUT_CONTAINER(13),
+    FAILED_TO_SET_CREATED_ITEM_OUTPUT_SLOT(14),
+    REQUEST_ALREADY_IN_PROGRESS(15),
+    FAILED_TO_INIT_SPARSE_CONTAINER(16),
+    PLAYER_NOT_IN_CREATIVE_MODE(28),
+    RECIPE_NOT_FOUND(32),
+    RECIPE_REQUIRES_CRAFTING_TABLE(33),
+    DST_CONTAINER_EQUAL_TO_CREATED_OUTPUT_CONTAINER(47),
+    DST_CONTAINER_AND_SLOT_EQUAL_TO_SRC_CONTAINER_AND_SLOT(48),
+    FAILED_TO_VALIDATE_SRC_SLOT(49),
+    FAILED_TO_VALIDATE_DST_SLOT(50),
+    INVALID_ADJUSTED_AMOUNT(51),
+    CANNOT_SWAP_ITEM(54),
+    CANNOT_PLACE_ITEM(55),
+    CANNOT_DROP_ITEM(59),
+    CANNOT_DESTROY_ITEM(60),
+    INVALID_NUM_CRAFTS(63),
+    INVALID_CRAFT_RESULT_STACK_SIZE(64),
+    CANNOT_REMOVE_ITEM(65);
+
+    private final int value;
+
+    ItemStackResponseStatus(final int value) {
+        this.value = value;
+    }
+
+    public int value() {
+        return this.value;
+    }
+
+    public boolean isSuccess() {
+        return this == OK;
+    }
+}

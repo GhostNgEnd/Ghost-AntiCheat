@@ -1,0 +1,17 @@
+
+
+name: Ghost
+main: ac.ghost.anticheat.GhostPlugin
+version: 1.0.1-acselector
+api: ["1.0.14"]
+author: Ghost
+load: POSTWORLD
+description: Bedrock-native movement anticheat for Nukkit-MOT.
+
+permissions:
+  ghost.admin:
+    description: Allows management of Ghost anticheat.
+    default: op
+  ghost.exempt:
+    description: Exempts a player from all Ghost checks and mitigation.
+    default: false
